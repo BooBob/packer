@@ -25,7 +25,7 @@ import (
 	filebuilder "github.com/hashicorp/packer/builder/file"
 	googlecomputebuilder "github.com/hashicorp/packer/builder/googlecompute"
 	hypervisobuilder "github.com/hashicorp/packer/builder/hyperv/iso"
-	hypervvmcxbuilder "github.com/mitchellh/packer/builder/hyperv/vmcx"
+	hypervvmcxbuilder "github.com/hashicorp/packer/builder/hyperv/vmcx"
 	nullbuilder "github.com/hashicorp/packer/builder/null"
 	oneandonebuilder "github.com/hashicorp/packer/builder/oneandone"
 	openstackbuilder "github.com/hashicorp/packer/builder/openstack"

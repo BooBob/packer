@@ -16,6 +16,7 @@ import (
 	"github.com/hashicorp/packer/packer"
 	"github.com/hashicorp/packer/template/interpolate"
 	"github.com/mitchellh/multistep"
+	"path/filepath"
 )
 
 const (
@@ -126,7 +127,7 @@ func (b *Builder) Prepare(raws ...interface{}) ([]string, error) {
 		warnings = append(warnings, isoWarnings...)
 		errs = packer.MultiErrorAppend(errs, isoErrs...)
 		
-		extension := strings.ToLower(filepath.Ext(b.config.ISOConfig.ISOUrls[0])
+		extension := strings.ToLower(filepath.Ext(b.config.ISOConfig.ISOUrls[0]))
 		if extension == "vhd" || extension == "vhdx" {
 			b.config.ISOConfig.TargetExtension = extension
 		}

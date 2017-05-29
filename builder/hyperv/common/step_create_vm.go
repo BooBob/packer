@@ -2,6 +2,7 @@ package common
 
 import (
 	"fmt"
+	"log"
 	"strings"
 	"path/filepath"
 	
@@ -37,7 +38,7 @@ func (s *StepCreateVM) Run(state multistep.StateBag) multistep.StepAction {
 	// Determine if we even have an existing virtual harddrive to attach
 	harddrivePath := ""
 	if harddrivePathRaw, ok := state.GetOk("iso_path"); ok {
-		extension := strings.ToLower(filepath.Ext(harddrivePathRaw.(string))
+		extension := strings.ToLower(filepath.Ext(harddrivePathRaw.(string)))
 		if extension == "vhd" || extension == "vhdx" {
 			harddrivePath = harddrivePathRaw.(string)
 		} else {

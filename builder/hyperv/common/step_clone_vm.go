@@ -2,11 +2,12 @@ package common
 
 import (
 	"fmt"
+	"log"
 	"strings"
 	"path/filepath"
 
 	"github.com/mitchellh/multistep"
-	"github.com/mitchellh/packer/packer"
+	"github.com/hashicorp/packer/packer"
 )
 
 // This step clones an existing virtual machine.
@@ -38,7 +39,7 @@ func (s *StepCloneVM) Run(state multistep.StateBag) multistep.StepAction {
 	// Determine if we even have an existing virtual harddrive to attach
 	harddrivePath := ""
 	if harddrivePathRaw, ok := state.GetOk("iso_path"); ok {
-		extension := strings.ToLower(filepath.Ext(harddrivePathRaw.(string))
+		extension := strings.ToLower(filepath.Ext(harddrivePathRaw.(string)))
 		if extension == "vhd" || extension == "vhdx" {
 			harddrivePath = harddrivePathRaw.(string)
 		} else {

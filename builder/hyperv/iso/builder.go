@@ -121,8 +121,8 @@ func (b *Builder) Prepare(raws ...interface{}) ([]string, error) {
 	warnings = append(warnings, isoWarnings...)
 	errs = packer.MultiErrorAppend(errs, isoErrs...)
 
-	if len(b.config.ISOConfig.ISOUrls) > 0) {
-		extension := strings.ToLower(filepath.Ext(b.config.ISOConfig.ISOUrls[0])
+	if len(b.config.ISOConfig.ISOUrls) > 0 {
+		extension := strings.ToLower(filepath.Ext(b.config.ISOConfig.ISOUrls[0]))
 		if extension == "vhd" || extension == "vhdx" {
 			b.config.ISOConfig.TargetExtension = extension
 		}

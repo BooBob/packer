@@ -202,7 +202,7 @@ if ($harddrivePath){
 }
 `
 		var ps powershell.PowerShellCmd
-		err := ps.Run(script, vmName, path, importHarddrivePath, strconv.FormatInt(ram, 10), strconv.FormatInt(diskSize, 10), switchName, strconv.FormatInt(int64(generation), 10))
+		err := ps.Run(script, vmName, path, harddrivePath, strconv.FormatInt(ram, 10), strconv.FormatInt(diskSize, 10), switchName, strconv.FormatInt(int64(generation), 10))
 		return err
 	} else {
 		var script = `
@@ -227,7 +227,7 @@ if ($harddrivePath){
 	}
 }
 
-func ExportVmxcVirtualMachine(exportPath string, vmName string, snapshotName string, allSnapshots string) error {
+func ExportVmxcVirtualMachine(exportPath string, vmName string, snapshotName string, allSnapshots bool) error {
 	var script = `
 param([string]$exportPath, [string]$vmName, [string]$snapshotName, [string]$allSnapshotsString)
 
@@ -364,7 +364,7 @@ func CloneVirtualMachine(cloneFromVmxcPath string, cloneFromVmName string, clone
 		}
 	}
 
-	err = ImportVmxcVirtualMachine(path, vmName, harddrivePath, ram, switchName)
+	err := ImportVmxcVirtualMachine(path, vmName, harddrivePath, ram, switchName)
 	if err != nil {
 		return err
 	}
