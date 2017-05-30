@@ -4,10 +4,10 @@ import (
 	"reflect"
 	"testing"
 
+	"fmt"
 	"github.com/hashicorp/packer/packer"
 	"io/ioutil"
 	"os"
-	"fmt"
 )
 
 func testConfig() map[string]interface{} {
@@ -19,7 +19,7 @@ func testConfig() map[string]interface{} {
 		"ssh_username":            "foo",
 		"ram_size":                64,
 		"guest_additions_mode":    "none",
-		"clone_from_vmxc_path":	   "generated",
+		"clone_from_vmxc_path":    "generated",
 		packer.BuildNameConfigKey: "foo",
 	}
 }

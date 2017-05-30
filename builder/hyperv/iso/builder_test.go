@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/hashicorp/packer/packer"
 	"fmt"
+	"github.com/hashicorp/packer/packer"
 )
 
 func testConfig() map[string]interface{} {
