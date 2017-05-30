@@ -155,7 +155,7 @@ func (b *Builder) Prepare(raws ...interface{}) ([]string, error) {
 		b.config.Cpu = 1
 	}
 
-	if b.config.Generation != 2 {
+	if b.config.Generation < 1 || b.config.Generation > 2 {
 		b.config.Generation = 1
 	}
 
