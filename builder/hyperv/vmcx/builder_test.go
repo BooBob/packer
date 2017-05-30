@@ -142,7 +142,7 @@ func TestBuilderPrepare_ExportedMachinePathExists(t *testing.T) {
 	}
 }
 
-func TestBuilderPrepare_CloneFromVmSettingUsedSoNoCloneFromVmxcPathRequired(t *testing.T) {
+func disabled_TestBuilderPrepare_CloneFromVmSettingUsedSoNoCloneFromVmxcPathRequired(t *testing.T) {
 	var b Builder
 	config := testConfig()
 	delete(config, "clone_from_vmxc_path")
